@@ -3,35 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cwipt</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>tnqq</title>
+    <style>
+        .switch-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 9px 13px;
+            font-size: 16px;
+            cursor: pointer;
+            background: rgba(14, 14, 14, 0.7);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            border: 2px #2D2D2D solid;
+        }
+    </style>
 </head>
-<body>
-    </div>
-    <div id="enter-site">
-        <button id="enter-button">Click to enter</button>
-    </div>
-    <div id="content" style="display:none;">
-        <audio id="background-music" loop>
-            <source src="https://pomf2.lain.la/f/4649ovv6.mp3" type="audio/mpeg">
-        </audio>
-        <video id="background-video" loop muted>
-            <source src="https://pomf2.lain.la/f/0xdnuns1.mp4" type="video/mp4">
-        </video>
-        <div id="video-overlay"></div>
-        <div id="bio-link">
-            <div id="user-profile">
-                <img src="https://i.pinimg.com/736x/b8/1e/74/b81e74b881ab16c735948e8cd2d349d2.jpg
-                <p>17</p>
-                <div id="buttons">
-                    <a href="https://discord.gg/HMwm2QCYJu">discord</a>
-                    <a href="https://github.com/bandoafterdark">github</a>
-                </div>
-                </div>
-            </div>
-            </div>
+<body style="background-image: url('https://files.catbox.moe/7qmcjs.png'); background-size: cover; background-position: center;">
+    <div class="card" data-aos="fade-up">
+        <img src="https://files.catbox.moe/i7ecgf.jpg" alt="Profile Picture" class="profile-img" data-aos="zoom-in">
+        <h2 data-aos="fade-up" data-aos-delay="100">skip</h2>
+        <p data-aos="fade-up" data-aos-delay="200">I'm a skid</p>
+        <div class="social-icons" data-aos="fade-up" data-aos-delay="300">
+            <a href="#" class="fa fa-paper-plane fa-1x"></a>
         </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/script.js"></script>
+    </div>
+    <button class="switch-btn" onclick="switchBackground()">🌢</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        const backgrounds = [
+            'https://files.catbox.moe/7qmcjs.png', // green bg
+            'https://files.catbox.moe/r1xgqc.png', // blue bg
+            'https://files.catbox.moe/9b9h82.png'  // purple bg
+        ];
+        let currentIndex = 0;
+
+        function switchBackground() {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            document.body.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+        }
+    </script>
 </body>
 </html>
